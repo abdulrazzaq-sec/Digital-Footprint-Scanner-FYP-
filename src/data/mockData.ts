@@ -1,0 +1,426 @@
+// Mock data for Digital Footprint Scanner application
+
+export const mockUser = {
+  id: "usr_demo_001",
+  username: "demo_user",
+  email: "demo@dfscanner.com",
+  avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=demo",
+  memberSince: "2024-01-15",
+  plan: "Pro",
+  totalScans: 47,
+  reportsGenerated: 12,
+  overallRiskScore: 62,
+};
+
+export const mockBreaches = [
+  {
+    id: 1,
+    name: "LinkedIn",
+    date: "2021-06-22",
+    domain: "linkedin.com",
+    records: 700000000,
+    dataTypes: ["Emails", "Names", "Phone Numbers", "Addresses"],
+    severity: "high",
+    description: "In June 2021, LinkedIn suffered a massive data breach affecting 700 million users.",
+  },
+  {
+    id: 2,
+    name: "Adobe",
+    date: "2013-10-04",
+    domain: "adobe.com",
+    records: 153000000,
+    dataTypes: ["Emails", "Passwords", "Names", "Credit Cards"],
+    severity: "critical",
+    description: "Adobe's 2013 breach exposed passwords and payment information for millions of users.",
+  },
+  {
+    id: 3,
+    name: "Dropbox",
+    date: "2012-07-01",
+    domain: "dropbox.com",
+    records: 68000000,
+    dataTypes: ["Emails", "Passwords"],
+    severity: "high",
+    description: "Dropbox breach from 2012 exposed hashed passwords for 68 million accounts.",
+  },
+  {
+    id: 4,
+    name: "MyFitnessPal",
+    date: "2018-02-01",
+    domain: "myfitnesspal.com",
+    records: 144000000,
+    dataTypes: ["Emails", "Usernames", "Passwords"],
+    severity: "medium",
+    description: "Under Armour's MyFitnessPal app was compromised, exposing user credentials.",
+  },
+  {
+    id: 5,
+    name: "Canva",
+    date: "2019-05-24",
+    domain: "canva.com",
+    records: 137000000,
+    dataTypes: ["Emails", "Names", "Usernames", "Cities"],
+    severity: "medium",
+    description: "Canva's 2019 breach exposed user profile information and hashed passwords.",
+  },
+];
+
+export const mockScanResults = {
+  email: {
+    lastScanned: "2024-01-28T14:32:00Z",
+    status: "issues_found",
+    breachCount: 5,
+    riskScore: 72,
+    exposedData: ["passwords", "emails", "names", "phone_numbers"],
+  },
+  password: {
+    lastScanned: "2024-01-28T14:35:00Z",
+    status: "warning",
+    strength: 65,
+    breached: true,
+    crackTime: "3 months",
+  },
+  username: {
+    lastScanned: "2024-01-28T14:40:00Z",
+    status: "issues_found",
+    platformsFound: 12,
+    totalPlatforms: 20,
+    exposureLevel: "medium",
+  },
+  socialMedia: {
+    lastScanned: "2024-01-28T14:45:00Z",
+    status: "warning",
+    privacyScore: 45,
+    publicProfile: 80,
+    recommendations: 8,
+  },
+  phone: {
+    lastScanned: "2024-01-28T14:50:00Z",
+    status: "issues_found",
+    riskScore: 58,
+    spamReports: 23,
+    breachesFound: 2,
+    directories: 4,
+  },
+  image: {
+    lastScanned: "2024-01-28T14:55:00Z",
+    status: "warning",
+    matchesFound: 8,
+    legitimate: 5,
+    suspicious: 3,
+  },
+  document: {
+    lastScanned: "2024-01-28T15:00:00Z",
+    status: "issues_found",
+    filesScanned: 15,
+    metadataExposed: true,
+    riskLevel: "high",
+  },
+  ip: {
+    lastScanned: "2024-01-28T15:05:00Z",
+    status: "warning",
+    privacyScore: 35,
+    dnsLeak: true,
+    webrtcLeak: true,
+  },
+  fingerprint: {
+    lastScanned: "2024-01-28T15:10:00Z",
+    status: "issues_found",
+    uniqueness: 99.9997,
+    trackabilityScore: 92,
+    oneInX: 287394,
+  },
+  phishing: {
+    lastScanned: "2024-01-28T15:15:00Z",
+    status: "completed",
+    score: 73,
+    susceptibility: 45,
+    grade: "C",
+  },
+};
+
+export const mockPlatforms = [
+  { name: "GitHub", icon: "github", found: true, username: "demo_user", profileAge: "3 years" },
+  { name: "Twitter/X", icon: "twitter", found: true, username: "demo_user", profileAge: "5 years" },
+  { name: "Reddit", icon: "message-circle", found: true, username: "demo_user_2024", profileAge: "2 years" },
+  { name: "LinkedIn", icon: "linkedin", found: true, username: "demo-user", profileAge: "4 years" },
+  { name: "Medium", icon: "book-open", found: true, username: "demo_user", profileAge: "1 year" },
+  { name: "Steam", icon: "gamepad-2", found: true, username: "demo_user", profileAge: "6 years" },
+  { name: "Discord", icon: "message-square", found: true, username: "demo_user#1234", profileAge: "4 years" },
+  { name: "TikTok", icon: "music", found: true, username: "demo_user", profileAge: "1 year" },
+  { name: "YouTube", icon: "youtube", found: true, username: "DemoUser", profileAge: "5 years" },
+  { name: "Spotify", icon: "music-2", found: true, username: "demo.user", profileAge: "4 years" },
+  { name: "Twitch", icon: "tv", found: true, username: "demo_user", profileAge: "2 years" },
+  { name: "Facebook", icon: "facebook", found: false },
+  { name: "Snapchat", icon: "camera", found: false },
+  { name: "Pinterest", icon: "pin", found: false },
+  { name: "Tumblr", icon: "rss", found: false },
+  { name: "Behance", icon: "palette", found: false },
+  { name: "Xbox", icon: "gamepad", found: false },
+  { name: "PlayStation", icon: "gamepad-2", found: false },
+  { name: "Mastodon", icon: "at-sign", found: false },
+];
+
+export const mockRecentActivity = [
+  { type: "email", action: "Email Breach Scan", result: "5 breaches found", severity: "high", timestamp: "2024-01-28T14:32:00Z" },
+  { type: "password", action: "Password Analysis", result: "Strength: Fair", severity: "medium", timestamp: "2024-01-28T14:35:00Z" },
+  { type: "username", action: "Username Footprint", result: "12 platforms found", severity: "low", timestamp: "2024-01-28T14:40:00Z" },
+  { type: "social", action: "Social Media Check", result: "Privacy score: 45%", severity: "medium", timestamp: "2024-01-28T14:45:00Z" },
+  { type: "phone", action: "Phone Risk Assessment", result: "23 spam reports", severity: "medium", timestamp: "2024-01-28T14:50:00Z" },
+  { type: "image", action: "Profile Image Search", result: "3 suspicious uses", severity: "high", timestamp: "2024-01-28T14:55:00Z" },
+  { type: "document", action: "Document Metadata", result: "Metadata exposed", severity: "high", timestamp: "2024-01-28T15:00:00Z" },
+  { type: "ip", action: "IP Privacy Scan", result: "DNS leak detected", severity: "medium", timestamp: "2024-01-28T15:05:00Z" },
+  { type: "fingerprint", action: "Device Fingerprint", result: "Highly unique", severity: "high", timestamp: "2024-01-28T15:10:00Z" },
+  { type: "phishing", action: "Phishing Test", result: "Score: 73%", severity: "low", timestamp: "2024-01-28T15:15:00Z" },
+];
+
+export const mockPhishingQuestions = [
+  {
+    id: 1,
+    type: "email",
+    question: "You receive an email from 'security@paypa1.com' asking you to verify your account immediately. What should you do?",
+    options: [
+      { id: "a", text: "Click the link and verify my account", correct: false },
+      { id: "b", text: "Check the sender's email carefully - this looks like a phishing attempt", correct: true },
+      { id: "c", text: "Forward the email to friends to warn them", correct: false },
+      { id: "d", text: "Reply asking for more information", correct: false },
+    ],
+    explanation: "The email domain 'paypa1.com' uses the number '1' instead of the letter 'l' - a classic phishing technique. Always verify the sender's exact email address.",
+    category: "email",
+  },
+  {
+    id: 2,
+    type: "url",
+    question: "Is this URL safe? https://secure-banking.login-verification.com/account",
+    options: [
+      { id: "a", text: "Safe - it has 'secure' in the name", correct: false },
+      { id: "b", text: "Unsafe - suspicious domain structure", correct: true },
+      { id: "c", text: "I'm not sure", correct: false },
+    ],
+    explanation: "The actual domain is 'login-verification.com', not a legitimate bank. Phishers often use subdomains to make URLs look legitimate.",
+    category: "url",
+  },
+  {
+    id: 3,
+    type: "scenario",
+    question: "You receive a call from 'Microsoft Support' saying your computer has a virus and they need remote access. What do you do?",
+    options: [
+      { id: "a", text: "Give them access - Microsoft knows about my computer", correct: false },
+      { id: "b", text: "Ask them to prove they're from Microsoft", correct: false },
+      { id: "c", text: "Hang up - Microsoft never makes unsolicited support calls", correct: true },
+      { id: "d", text: "Follow their instructions to check for viruses", correct: false },
+    ],
+    explanation: "Microsoft, Apple, and other tech companies never make unsolicited calls about your computer. This is a common tech support scam.",
+    category: "vishing",
+  },
+  {
+    id: 4,
+    type: "attachment",
+    question: "You receive an email with an attachment named 'Invoice_Q4.pdf.exe'. Should you open it?",
+    options: [
+      { id: "a", text: "Yes, it's a PDF invoice", correct: false },
+      { id: "b", text: "No, .exe files are executable and could contain malware", correct: true },
+      { id: "c", text: "Only if I'm expecting an invoice", correct: false },
+    ],
+    explanation: "The file has a double extension (.pdf.exe). The actual extension is .exe (executable), which can run malware on your computer.",
+    category: "attachment",
+  },
+  {
+    id: 5,
+    type: "urgency",
+    question: "An email says 'Your account will be DELETED in 24 HOURS unless you verify NOW!' - identify the red flags:",
+    options: [
+      { id: "a", text: "Creates false urgency to pressure quick action", correct: true },
+      { id: "b", text: "Uses excessive capitalization", correct: true },
+      { id: "c", text: "Threatens account deletion", correct: true },
+      { id: "d", text: "All of the above", correct: true },
+    ],
+    explanation: "This email uses multiple pressure tactics: urgency, capitalization, and threats. Legitimate companies give reasonable time to respond.",
+    category: "urgency",
+  },
+];
+
+export const mockTestimonials = [
+  {
+    name: "Sarah Chen",
+    role: "Privacy Advocate",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+    quote: "Digital Footprint Scanner revealed data breaches I never knew about. I was able to secure 5 compromised accounts before any damage occurred.",
+  },
+  {
+    name: "Marcus Johnson",
+    role: "IT Security Manager",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=marcus",
+    quote: "An essential tool for anyone serious about their online privacy. The comprehensive reports are incredibly detailed and actionable.",
+  },
+  {
+    name: "Elena Rodriguez",
+    role: "Freelance Developer",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=elena",
+    quote: "I recommend Digital Footprint Scanner to all my clients. It's eye-opening to see how much personal data is exposed online.",
+  },
+];
+
+export const mockStats = {
+  recordsChecked: 2500000000,
+  usersProtected: 150000,
+  securityScans: 11,
+  accuracyRate: 98,
+};
+
+export const mockPasswordAnalysis = {
+  password: "Demo@2024Pass",
+  strength: 65,
+  grade: "Fair",
+  crackTime: "3 months",
+  breached: true,
+  breachCount: 1,
+  analysis: {
+    length: { score: 80, status: "good", message: "13 characters (Good)" },
+    uppercase: { score: 100, status: "good", message: "Contains uppercase letters" },
+    lowercase: { score: 100, status: "good", message: "Contains lowercase letters" },
+    numbers: { score: 100, status: "good", message: "Contains numbers" },
+    symbols: { score: 100, status: "good", message: "Contains special symbols" },
+    common: { score: 40, status: "warning", message: "Follows a common pattern" },
+    breach: { score: 0, status: "critical", message: "Found in 1 data breach" },
+  },
+  composition: {
+    uppercase: 15,
+    lowercase: 54,
+    numbers: 23,
+    symbols: 8,
+  },
+};
+
+export const mockIPData = {
+  ip: "203.0.113.45",
+  version: "IPv4",
+  location: {
+    country: "United States",
+    countryCode: "US",
+    region: "New York",
+    city: "New York City",
+    postalCode: "10001",
+    timezone: "America/New_York",
+    coordinates: { lat: 40.7128, lng: -74.006 },
+    accuracyRadius: 25,
+  },
+  network: {
+    isp: "Comcast",
+    organization: "Comcast Cable Communications",
+    asNumber: "AS7922",
+    connectionType: "Cable/DSL",
+    hostname: "c-203-0-113-45.hsd1.ny.comcast.net",
+  },
+  privacy: {
+    score: 35,
+    isVPN: false,
+    isProxy: false,
+    isTor: false,
+    blacklisted: false,
+    blacklistChecks: 15,
+  },
+  leaks: {
+    dns: { leaked: true, servers: ["75.75.75.75", "75.75.76.76"], isIspDns: true },
+    webrtc: { leaked: true, localIPs: ["192.168.1.105"], publicIPs: ["203.0.113.45"] },
+  },
+};
+
+export const mockDocumentMetadata = {
+  filename: "Project_Report.pdf",
+  fileType: "PDF",
+  fileSize: "2.4 MB",
+  createdDate: "2024-01-15T09:30:00Z",
+  modifiedDate: "2024-01-27T16:45:00Z",
+  riskLevel: "high",
+  basic: {
+    author: "John Doe",
+    authorEmail: "johndoe@company.com",
+    organization: "ACME Corporation",
+    title: "Q4 Project Report",
+    subject: "Annual Review",
+    keywords: ["project", "report", "2024", "confidential"],
+    software: "Microsoft Word 2021",
+    softwareVersion: "16.0.14326.20404",
+  },
+  history: {
+    totalEditTime: "5.2 hours",
+    revisions: 47,
+    previousAuthors: ["Jane Smith", "Bob Wilson"],
+    trackedChanges: true,
+    commentsFound: 12,
+  },
+  technical: {
+    pageCount: 24,
+    wordCount: 8547,
+    hiddenText: true,
+    macros: false,
+    embeddedFiles: 3,
+    hyperlinks: 15,
+  },
+  risks: [
+    { type: "Personal Info", detail: "Author name and email exposed", severity: "high" },
+    { type: "Organization", detail: "Company name and internal paths visible", severity: "medium" },
+    { type: "Edit History", detail: "Shows when and how long you worked", severity: "low" },
+    { type: "Hidden Comments", detail: "12 internal comments visible in metadata", severity: "high" },
+  ],
+};
+
+export const mockFingerprintData = {
+  uniqueness: {
+    percentage: 99.9997,
+    oneInX: 287394,
+    interpretation: "Highly Unique",
+    trackabilityScore: 92,
+  },
+  browser: {
+    name: "Chrome",
+    version: "120.0.6099.130",
+    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...",
+    plugins: 5,
+    mimeTypes: 2,
+    doNotTrack: false,
+    cookiesEnabled: true,
+    languages: ["en-US", "en"],
+  },
+  system: {
+    os: "Windows 10",
+    platform: "Win32",
+    cpuCores: 8,
+    deviceMemory: 16,
+    screenResolution: "1920x1080",
+    colorDepth: 24,
+    pixelRatio: 1,
+    touchSupport: false,
+  },
+  canvas: {
+    hash: "a7f8d3b2e1c4f6a9d5e8b1c7f3a2d6e9",
+    uniqueness: 0.003,
+  },
+  webgl: {
+    renderer: "AMD Radeon RX 6800 XT",
+    vendor: "AMD",
+    version: "WebGL 2.0",
+    extensions: 45,
+  },
+  audio: {
+    hash: "b2c4d6e8f1a3c5e7",
+    uniqueness: 0.012,
+  },
+  fonts: {
+    detected: 47,
+    list: ["Arial", "Helvetica", "Times New Roman", "Courier New", "Verdana", "Georgia", "Fira Code", "Inter"],
+  },
+  timezone: {
+    name: "America/New_York",
+    offset: -300,
+    locale: "en-US",
+  },
+  tracking: {
+    canvas: 35,
+    browser: 25,
+    webgl: 20,
+    audio: 10,
+    other: 10,
+  },
+};
